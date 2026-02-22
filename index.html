@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A1-SATTA</title>
+  <style>
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    body { 
+      background: #000; 
+      font-family: Helvetica, sans-serif;
+      line-height: 1.42857143;
+      color: #fff; 
+    }
+
+    /* NAV */
+    nav {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 15px;
+      background: #FFD700;
+      border: 1px solid #000000;
+      border-radius: 50px;
+      padding: 10px 100px;
+      display: inline-block;
+      box-shadow: 2px 2px white;
+    }
+    nav a.active {
+      background: #fff;
+      border-color: #000000;
+    }
+
+    nav a:hover {
+      background: #fff;
+      box-shadow: 2px 2px #FFD700;
+    }
+    .nav-info {
+      color: #fff;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .moving-text {
+      font-size: 16px;
+      text-align: center;
+      margin: 0px;
+      padding-bottom: 5px;
+    }
+
+    /* HERO */
+    .hero {
+      background: #FFD700;
+      text-align: center;
+      padding: 24px;
+      border-bottom: #000 solid 2px;
+    }
+    .hero a {
+      font-size: 40px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0px;
+      text-decoration: none;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* CONTACT BANNER */
+    .contact-banner {
+      background: linear-gradient(to bottom, #FF8C00, #FFD700);
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: #000 solid 1px;
+    }
+    .contact-banner h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    /* SPACER */
+    .spacer { background: #fff; height: 3rem; }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      text-align: center;
+    }
+    .footer-links {
+      margin-bottom: 0;
+      padding: 20px 0;
+    }
+    .footer-links a {
+      color: #FFD700;
+      text-decoration: underline;
+      margin: 0 15px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .footer-copy {
+      background: #FFD700;
+      color: #000;
+      padding: 14px 0;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .disclaimer {
+      background: #000;
+      color: #FFD700;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .disclaimer p {
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    /* ===============================
+   GLOBAL RESPONSIVE IMPROVEMENTS
+================================= */
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make images responsive (future safe) */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===============================
+   LARGE TABLETS (max-width: 992px)
+================================= */
+@media (max-width: 992px) {
+
+  nav {
+    padding: 20px 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  nav a {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+
+  .hero a {
+    font-size: 32px;
+  }
+
+  .contact-banner h2 {
+    font-size: 1.5rem;
+    padding: 0 15px;
+  }
+
+  .disclaimer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* ===============================
+   TABLETS & SMALL DEVICES (768px)
+================================= */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 15px 10px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  nav a {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 18px;
+  }
+
+  .hero a {
+    font-size: 26px;
+  }
+
+  .contact-banner {
+    padding: 15px 10px;
+  }
+
+  .contact-banner h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-links a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .disclaimer {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .disclaimer p {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+   MOBILE DEVICES (576px)
+================================= */
+@media (max-width: 576px) {
+
+  nav {
+    padding: 10px 5px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+  }
+
+  nav a {
+    width: 90%;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .moving-text {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .hero a {
+    font-size: 22px;
+  }
+
+  .contact-banner h2 {
+    font-size: 16px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+  }
+
+  .disclaimer {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+
+  .disclaimer p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-links">
+      <a href="#">HOME</a>
+      <a href="#">CHART</a>
+      <a href="#" class="active">CONTACT</a>
+      <a href="#">LOGIN</a>
+    </div>
+  </nav>
+
+  <div class="nav-info">
+    <marquee behavior="" direction="">
+      <p class="moving-text">A1-satta is an information portal which keep satta king player updated by providing real-time satta king results for sadar bazar satta king, gali satta , faridabad satta and ghaziabad satta.</p>
+    </marquee>
+  </div>
+
+
+  <!-- HERO -->
+  <div class="hero">
+    <a href="">A1-SATTA</a>
+  </div>
+
+  <!-- CONTACT BANNER -->
+  <div class="contact-banner">
+    <h2>For any enquiry message us at dostmera643@gmail.com</h2>
+  </div>
+
+  <!-- SPACER -->
+  <div class="spacer"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-copy">&#169; 2026 A1-Satta All Rights Reserved</div>
+    <div class="disclaimer">
+      <p>!! DISCLAIMER - A1-Satta is a non-commercial informational website. Please view this site at your own risk, All The Information Shown On Website Is Sponsored And
+      We Warn You That satta matka Gambling/Satta May Be Banned Or Illegal In Your Country. We Are Not Responsible For Any Issues Or Scam..., We Respect All Country
+      Rules/Laws... If You Not Agree With Our Site disclaimer Please Quit Our Site Right Now. Thank You.</p>
+    </div>
+  </footer>
+</body>
+</html>
